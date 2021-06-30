@@ -7,20 +7,20 @@ using ContosoUniversity.Models;
 
 namespace ContosoUniversity.DAL
 {
-    public class SchoolInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<SchoolContext>
+    public class SchoolInitializer : System.Data.Entity.DropCreateDatabaseAlways<SchoolContext>
     {
         protected override void Seed(SchoolContext context)
         {
             var students = new List<Student>
             {
-            new Student{FirstMidName="Carson",LastName="Alexander",EmailAddress="alex.carson@contesso.edu",EnrollmentDate=DateTime.Parse("2005-09-01")},
-            new Student{FirstMidName="Meredith",LastName="Alonso",EnrollmentDate=DateTime.Parse("2002-09-01")},
-            new Student{FirstMidName="Arturo",LastName="Anand",EnrollmentDate=DateTime.Parse("2003-09-01")},
-            new Student{FirstMidName="Gytis",LastName="Barzdukas",EnrollmentDate=DateTime.Parse("2002-09-01")},
-            new Student{FirstMidName="Yan",LastName="Li",EnrollmentDate=DateTime.Parse("2002-09-01")},
-            new Student{FirstMidName="Peggy",LastName="Justice",EnrollmentDate=DateTime.Parse("2001-09-01")},
-            new Student{FirstMidName="Laura",LastName="Norman",EnrollmentDate=DateTime.Parse("2003-09-01")},
-            new Student{FirstMidName="Nino",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2005-09-01")}
+            new Student{FirstMidName="Carson",LastName="AlexAgain",EmailAddress="alex.carson@contesso.edu",EnrollmentDate=DateTime.Parse("2005-09-01")},
+            new Student{FirstMidName="Meredith",LastName="Alonso",EmailAddress="alex.carson",EnrollmentDate=DateTime.Parse("2002-09-01")},
+            new Student{FirstMidName="Arturo",LastName="Anand",EmailAddress="alex",EnrollmentDate=DateTime.Parse("2003-09-01")},
+            new Student{FirstMidName="Gytis",LastName="Barzdukas",EmailAddress="alex.carson@contesso.edu",EnrollmentDate=DateTime.Parse("2002-09-01")},
+            new Student{FirstMidName="Yan",LastName="Li",EmailAddress="alex.carson@contesso.edu",EnrollmentDate=DateTime.Parse("2002-09-01")},
+            new Student{FirstMidName="Peggy",LastName="Justice",EmailAddress="alex.carson@contesso.edu",EnrollmentDate=DateTime.Parse("2001-09-01")},
+            new Student{FirstMidName="Laura",LastName="Norman",EmailAddress="givenewemail",EnrollmentDate=DateTime.Parse("2003-09-01")},
+            new Student{FirstMidName="Nino",LastName="Olivetto",EmailAddress="alex.carson@contesso.edu",EnrollmentDate=DateTime.Parse("2005-09-01")}
             };
 
             students.ForEach(s => context.Students.Add(s));
