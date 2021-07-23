@@ -34,7 +34,7 @@ namespace ContosoUniversity.Controllers
                 searchString = currentFilter;
             }
 
-            ViewBag.CurrentFilter = searchString;
+            
 
             var students = from s in db.Students
                            select s;
@@ -43,6 +43,7 @@ namespace ContosoUniversity.Controllers
             {
                 students = students.Where(s => s.LastName.Contains(searchString)
                                        || s.FirstMidName.Contains(searchString));
+                ViewBag.CurrentFilter = searchString;
             }
 
             switch (sortOrder)
